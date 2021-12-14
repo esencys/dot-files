@@ -10,4 +10,5 @@ cp -r dot-files/vim .vim/
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+echo "[ -f ~/.bash_aliases ] && source ~/.bash_aliases" >> ~/.bashrc
 source ~/.bashrc
