@@ -10,12 +10,15 @@ set updatetime=300
 set shortmess+=c
 set mouse=a
 set scrolloff=6
+set termguicolors
 
 " - Save some LH typing
 inoremap jk <Esc>
 " }}}
 " Colors {{{
-colorscheme codedark
+let g:tokyonight_style = 'night'
+colorscheme tokyonight
+
 syntax enable
 " }}}
 " Searching {{{
@@ -110,7 +113,7 @@ let g:user_emmet_settings = {
 \              ."\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
 \              ."\t<title></title>\n"
 \              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
-\              ."\t<link rel=\"stylesheet\" href\"style.css\">\n"
+\              ."\t<link rel=\"stylesheet\" href=\"style.css\">\n"
 \              ."</head>\n"
 \              ."<body>\n\t${child}|\n</body>\n"
 \              ."</html>",
@@ -147,6 +150,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'elmcast/elm-vim'
 Plug 'andys8/vim-elm-syntax', {'for': 'elm'}
 Plug 'vim-airline/vim-airline'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim', { 'do' : { -> fzf#install() } }
 call plug#end()
 " }}}
 "
