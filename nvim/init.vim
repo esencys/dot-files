@@ -1,5 +1,6 @@
 call plug#begin(stdpath('data') . '/plugged')
   Plug 'liuchengxu/vim-better-default'
+  Plug 'junegunn/seoul256.vim'
 
   Plug 'easymotion/vim-easymotion'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -12,8 +13,9 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-commentary'
+  Plug 'vim-airline/vim-airline'
 
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
@@ -28,12 +30,14 @@ call plug#begin(stdpath('data') . '/plugged')
 
 call plug#end()
 
+let g:python3_host_prog = '/usr/bin/python3'
 
 let mapleader = " "
 let maplocalleader = ","
 set scrolloff=6
 
-colorscheme codedark
+let g:seoul256_background = 233
+colo seoul256
 
 " Clojure {{{
 let g:deoplete#enable_at_startup = 1
@@ -65,9 +69,15 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 " }}}
 
-" {{{
+" Git Fugitive {{{
 map <leader>gs :G<CR>
 map <leader>gl :diffget //3<CR>
 map <leader>gh :diffget //2<CR>
 " }}}
 
+" Using Lua functions {{{
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+" }}}
