@@ -28,6 +28,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-dispatch'
   Plug 'radenling/vim-dispatch-neovim'
 
+  Plug 'deoplete-plugins/deoplete-jedi'
 call plug#end()
 
 let g:python3_host_prog = '/usr/bin/python3'
